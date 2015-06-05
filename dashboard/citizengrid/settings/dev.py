@@ -15,3 +15,7 @@ DATABASES = {
 ISO_GENERATOR_EXE = '/media/isocreator/cg_vams_iso_gen_mac'
 #For deploying CitizenGrid on Linux, uncomment the below line
 #ISO_GENERATOR_EXE = '/media/isocreator/cg_vams_iso_gen'
+
+# Insert Facebook API app ID and secret here
+FACEBOOK_APP_ID              = 'xxxxxxxxxxxxxxx'
+FACEBOOK_API_SECRET          = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
