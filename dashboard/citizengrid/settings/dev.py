@@ -16,6 +16,13 @@ ISO_GENERATOR_EXE = '/media/isocreator/cg_vams_iso_gen_mac'
 #For deploying CitizenGrid on Linux, uncomment the below line
 #ISO_GENERATOR_EXE = '/media/isocreator/cg_vams_iso_gen'
 
-# Insert Facebook API app ID and secret here
+# Details of the Facebook App created in the Facebook developer console
 FACEBOOK_APP_ID              = 'xxxxxxxxxxxxxxx'
 FACEBOOK_API_SECRET          = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+
+# Details of the Google OAuth 2.0 client ID created in the Google Developer Console
+# When creating the Google OAuth 2 Client ID, enter the following details:
+# Authorized JavaScript origins: http://serverhostname:portno
+# Authorized redirect URIs: http://serverhostname:portno/complete/google-oauth2/
+GOOGLE_OAUTH2_CLIENT_ID = 'xxxxxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com'
+GOOGLE_OAUTH2_CLIENT_SECRET = 'xxxxxxxxxxxxxxxxxxxxxxxx'
