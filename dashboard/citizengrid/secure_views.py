@@ -79,10 +79,14 @@ def cg(request):
     # Get the user info for the current user
     user_info_list = UserInfo.objects.filter(user=request.user)
     if len(user_info_list) != 1:
-        print "ERROR: Looking up info for user " + request.user.username + " and it can't be found!"
-        return
+        # Create the UserInfo if it doesn't already exist, since they are authenticated
+        # this is OK.
+        user_info = UserInfo.objects.create(user=request.user, user_status='N')
+        user_info.save()
 
-    user_info = user_info_list[0]
+        print "INFO: Creating UserInfo for user " + request.user.username
+    else:
+        user_info = user_info_list[0]
 
     print user_info
 

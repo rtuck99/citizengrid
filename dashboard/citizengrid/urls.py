@@ -39,6 +39,9 @@ router.add_api_view("usercredentials",
 
 urlpatterns = patterns('',
                        # Examples:
+                       
+                       # Django Social Auth urls (facebook, openID etc.)
+                       url(r'', include('social_auth.urls')),
                        url(r'^$', 'citizengrid.views.home', name='home'),
                        url(r'^about', 'citizengrid.views.about', name='about'),
                        url(r'^contact',
@@ -298,4 +301,5 @@ urlpatterns = patterns('',
 
                        # admin
                        url(r'^admin/', include(admin.site.urls)),
+
                        )

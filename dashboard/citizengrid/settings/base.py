@@ -24,8 +24,8 @@ TEMPLATE_DEBUG = DEBUG
 ALLOWED_HOSTS = ['127.0.0.1','localhost','cyberlab.doc.ic.ac.uk'] # Change to IP address and domain name in production
 
 ADMINS = (
-    ('admin', 'admin@localhost'),
-)
+          ('admin', 'admin@localhost'),
+          )
 
 EMAIL_HOST = 'automail.cc.ic.ac.uk'
 EMAIL_PORT = 25
@@ -83,18 +83,18 @@ STATIC_URL = '/static/'
 
 # Additional locations of static files
 STATICFILES_DIRS = (
-    # Put strings here, like "/home/html/static" or "C:/www/django/static".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-)
+                    # Put strings here, like "/home/html/static" or "C:/www/django/static".
+                    # Always use forward slashes, even on Windows.
+                    # Don't forget to use absolute paths, not relative paths.
+                    )
 
 # List of finder classes that know how to find static files in
 # various locations.
 STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
-)
+                       'django.contrib.staticfiles.finders.FileSystemFinder',
+                       'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+                       #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+                       )
 
 #SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTOCOL', 'https')
 #os.environ['HTTPS'] = "on"
@@ -115,27 +115,28 @@ except ImportError:
    
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
-    'django.template.loaders.filesystem.Loader',
-    'django.template.loaders.app_directories.Loader',
-)
+                    'django.template.loaders.filesystem.Loader',
+                    'django.template.loaders.app_directories.Loader',
+                    )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
-    'django.core.context_processors.request',
-    'django.core.context_processors.static',
-    'django.contrib.auth.context_processors.auth',
-    'sekizai.context_processors.sekizai',
+                               'django.core.context_processors.request',
+                               'django.core.context_processors.static',
+                               'django.contrib.auth.context_processors.auth',
+                               'sekizai.context_processors.sekizai',
+                               'social_auth.context_processors.social_auth_by_type_backends',
     
-)
+                               )
 
 MIDDLEWARE_CLASSES = (
-    'django.middleware.common.CommonMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
-    # Uncomment the next line for simple clickjacking protection:
-    # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
-)
+                      'django.middleware.common.CommonMiddleware',
+                      'django.contrib.sessions.middleware.SessionMiddleware',
+                      'django.middleware.csrf.CsrfViewMiddleware',
+                      'django.contrib.auth.middleware.AuthenticationMiddleware',
+                      'django.contrib.messages.middleware.MessageMiddleware',
+                      # Uncomment the next line for simple clickjacking protection:
+                      # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+                      )
 
 ROOT_URLCONF = 'citizengrid.urls'
 
@@ -143,18 +144,18 @@ ROOT_URLCONF = 'citizengrid.urls'
 WSGI_APPLICATION = 'citizengrid.wsgi.application'
 
 TEMPLATE_DIRS = (
-    # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
-    # Always use forward slashes, even on Windows.
-    # Don't forget to use absolute paths, not relative paths.
-    os.path.join(PROJECT_ROOT, 'templates'),
-)
+                 # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
+                 # Always use forward slashes, even on Windows.
+                 # Don't forget to use absolute paths, not relative paths.
+                 os.path.join(PROJECT_ROOT, 'templates'),
+                 )
 
 REST_FRAMEWORK = {
 
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.BasicAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
-    ),
+                                       'rest_framework.authentication.BasicAuthentication',
+                                       'rest_framework.authentication.SessionAuthentication',
+                                       ),
     # Use hyperlinked styles by default.
     # Only used if the `serializer_class` attribute is not set on a view.
     'DEFAULT_MODEL_SERIALIZER_CLASS':
@@ -162,34 +163,34 @@ REST_FRAMEWORK = {
 
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
-     'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',),
-     'DEFAULT_FILTER_BACKENDS': ('rest_framework.filters.DjangoFilterBackend',),
-     'TEST_REQUEST_DEFAULT_FORMAT': 'json',
+        'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly', ),
+        'DEFAULT_FILTER_BACKENDS': ('rest_framework.filters.DjangoFilterBackend', ),
+        'TEST_REQUEST_DEFAULT_FORMAT': 'json',
     #'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
     'PAGINATE_BY': 10
 }
 
 INSTALLED_APPS = (
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.sites',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'django.contrib.formtools',
-    'django.contrib.humanize',
-    'django.contrib.admin',
-    'password_reset',
-    'django.contrib.admindocs',
-    'citizengrid',
-    'south',
-    'django_nyt',
-    'mptt',
-    'sekizai',
-    'sorl.thumbnail',
-    'rest_framework',
-
-)
+                  'django.contrib.auth',
+                  'django.contrib.contenttypes',
+                  'django.contrib.sessions',
+                  'django.contrib.sites',
+                  'django.contrib.messages',
+                  'django.contrib.staticfiles',
+                  'django.contrib.formtools',
+                  'django.contrib.humanize',
+                  'django.contrib.admin',
+                  'password_reset',
+                  'django.contrib.admindocs',
+                  'citizengrid',
+                  'south',
+                  'django_nyt',
+                  'mptt',
+                  'sekizai',
+                  'sorl.thumbnail',
+                  'rest_framework',
+                  'social_auth'
+                  )
 
 
 # A sample logging configuration. The only tangible logging
@@ -215,19 +216,41 @@ LOGGING = {
     },
     'handlers': {
 
-         'console':{
-             'level': 'DEBUG',
-             'class': 'logging.StreamHandler',
-             'formatter': 'verbose'
-         },
+        'console':{
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose'
+        },
     },
     'loggers': {
     'django': {
-            'handlers': ['console'],
-            'level': 'DEBUG',
-            'propagate': True,
-        },
+        'handlers': ['console'],
+        'level': 'DEBUG',
+        'propagate': True,
+    },
 
     }
 }
 
+# This is the default
+# AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend',)
+AUTHENTICATION_BACKENDS = (
+                           'social_auth.backends.facebook.FacebookBackend',
+                           'django.contrib.auth.backends.ModelBackend',                           
+)
+
+SOCIAL_AUTH_ENABLED_BACKENDS = (
+'facebook'
+)
+
+SOCIAL_AUTH_COMPLETE_URL_NAME = 'socialauth_complete'
+SOCIAL_AUTH_ASSOCIATE_URL_NAME = 'associate_complete'
+
+# NB This is required to avoid datetime.datetime is not serializable exception
+# However it introduces a security vulnerability in Django 1.6 see 
+# http://stackoverflow.com/questions/22005841/is-not-json-serializable-django-social-auth-facebook-login
+# and https://github.com/omab/django-social-auth/issues/795
+SESSION_SERIALIZER = 'django.contrib.sessions.serializers.PickleSerializer'
+LOGIN_REDIRECT_URL = '/cg'
+
+FACEBOOK_EXTENDED_PERMISSIONS = ['email']
