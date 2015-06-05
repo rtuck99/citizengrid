@@ -54,7 +54,11 @@
             <label class="checkbox">
                 <input type="checkbox" value="remember-me"> Remember me
             </label>
-            <a href='{% url "socialauth_begin" "facebook" %}'><img src="{{ STATIC_URL }}img/facebook.png" alt="Login with facebook"/></a>
+            <!-- TODO enhance button niceness by making them the same size and rollover effect -->
+            <a href='{% url "socialauth_begin" "facebook" %}'><img src="{{ STATIC_URL }}img/facebook.png" title="Login with facebook"/></a>
+            <a href='{% url "socialauth_begin" "google-oauth2" %}'>
+                <img src='{{ STATIC_URL }}img/Red-signin-Medium-base-32dp.png'
+                     title="Sign in with Google"/></a>
             <div id="errorbox">
                 {% if form.errors %}
                 <p>Your username and password didn't match. Please try again.</p>

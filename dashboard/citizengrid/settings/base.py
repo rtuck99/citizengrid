@@ -236,11 +236,13 @@ LOGGING = {
 # AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend',)
 AUTHENTICATION_BACKENDS = (
                            'social_auth.backends.facebook.FacebookBackend',
+                           'social_auth.backends.google.GoogleOAuth2Backend',
                            'django.contrib.auth.backends.ModelBackend',                           
 )
 
 SOCIAL_AUTH_ENABLED_BACKENDS = (
-'facebook'
+'facebook',
+'google',
 )
 
 SOCIAL_AUTH_COMPLETE_URL_NAME = 'socialauth_complete'
